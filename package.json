@@ -1,0 +1,39 @@
+{
+  "name": "eventuate-stream",
+  "version": "0.0.0",
+  "description": "Create a node-style duplex stream from an eventuate",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jasonpincin/eventuate-stream.git"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jasonpincin/eventuate-stream/issues"
+  },
+  "homepage": "https://github.com/jasonpincin/eventuate-stream",
+  "author": {
+    "name": "Jason Pincin",
+    "email": "jason@pincin.com",
+    "url": "http://jason.pincin.com/"
+  },
+  "contributors": [],
+  "devDependencies": {
+    "@jasonpincin/standard": "~5.0.0-6",
+    "eventuate": "~4.0.0",
+    "istanbul": "~0.3.17",
+    "jsonstream": "~1.0.3",
+    "opn": "~1.0.2",
+    "tap-dot": "~1.0.0",
+    "tap-spec": "~4.1.0",
+    "tape": "~4.2.0"
+  },
+  "scripts": {
+    "test": "make npm-test",
+    "coverage": "make npm-coverage"
+  },
+  "dependencies": {
+    "through2": "~2.0.0"
+  }
+}
