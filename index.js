@@ -9,7 +9,7 @@ module.exports = function createEventuateStream (eventuate) {
     eventuate(streamConsumer)
     stream.on('finish', cleanup)
     stream.on('end', cleanup)
-    stream.on('error', cleanup) // should signalError here too
+    stream.on('error', cleanup)
 
     return stream
 
