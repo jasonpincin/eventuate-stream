@@ -9,12 +9,33 @@ Create a node-style duplex stream from an eventuate
 ## example
 
 ```javascript
-TODO
+var eventuate       = require('eventuate'),
+    eventuateStream = require('eventuate-stream'),
+    jsonstream      = require('jsonstream')
+
+var request = eventuate()
+var requestStream = eventuateStream(request)
+
+requestStream.pipe(jsonstream.stringify(false)).pipe(process.stdout)
+
+request(function onRequest (req) {
+    console.log('\nGot a request for resource: ' + req.resource)
+})
+
+requestStream.write({ resource: '/something' })
+requestStream.write({ resource: '/something/else' })
 ```
 
 ## api
 
-TODO
+```
+var eventuateStream = require('eventuate-stream'),
+    event           = require('eventuate')()
+```
+
+### var stream = eventuateStream(event)
+
+Create a duplex object-mode stream. Anything written to the stream will be produced by the eventuate, and anything produced by the eventuate will be readable/emitted via the stream.
 
 ## install
 
