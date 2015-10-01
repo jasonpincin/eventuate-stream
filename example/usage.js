@@ -1,9 +1,15 @@
-var jsonstream      = require('jsonstream'),
-    eventuate       = require('eventuate'),
-    eventuateStream = require('..')
+var eventuate       = require('eventuate'),
+    eventuateStream = require('..'),
+    jsonstream      = require('jsonstream')
 
 var request = eventuate()
-eventuateStream(request).pipe(jsonstream.stringify(false)).pipe(process.stdout)
+var requestStream = eventuateStream(request)
 
-request.produce({ resource: '/something' })
-request.produce({ resource: '/something/else' })
+requestStream.pipe(jsonstream.stringify(false)).pipe(process.stdout)
+
+request(function onRequest (req) {
+    console.log('\nGot a request for resource: ' + req.resource)
+})
+
+requestStream.write({ resource: '/something' })
+requestStream.write({ resource: '/something/else' })
