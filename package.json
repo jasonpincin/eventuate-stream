@@ -7,7 +7,11 @@
     "type": "git",
     "url": "git://github.com/jasonpincin/eventuate-stream.git"
   },
-  "keywords": [],
+  "keywords": [
+    "event",
+    "eventuate",
+    "stream"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/jasonpincin/eventuate-stream/issues"
